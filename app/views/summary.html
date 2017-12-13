@@ -1,0 +1,23 @@
+<md-content>
+    <h2>
+        Game session: {{::gs.start | date:'dd.MM.yyyy - HH:mm'}} <small>| {{::gs.end | date:'dd.MM.yyyy - HH:mm'}}</small>
+    </h2>
+    <h3>Total costs: {{total | number:2}} €</h3>
+
+    <md-card ng-repeat="player_info in player_infos track by player_info.player._id">
+        <md-card-content>
+            <h2>{{::player_info.player.firstName}} {{::player_info.player.lastName}} <small>{{::player_info.total_cost | number:2}} €</small></h2>
+            <md-list>
+                <md-list-item class="md-2-line" ng-repeat="penalty_info in player_info.penalties track by penalty_info.penalty._id">
+                    <div class="md-list-item-text">
+                        <h3>{{::penalty_info.penalty.name}}</h3>
+                        <p>Count: {{::penalty_info.count}}</p>
+                    </div>
+                    <div class="md-secondary">
+                        {{penalty_info.count * penalty_info.penalty.price | number:2}} €
+                    </div>
+                </md-list-item>
+            </md-list>
+        </md-card-content>
+    </md-card>
+</md-content>

@@ -1,0 +1,20 @@
+<md-content>
+    <md-card>
+        <md-card-content>
+            <h2>{{player.firstName}} {{player.lastName}} <small>({{total_cost | number:2}} €)</small></h2>
+            <md-list>
+                <md-list-item ng-repeat="penalty in penalties track by penalty._id" class="md-3-line md-no-proxy">
+                    <md-icon ng-click="increase(penalty)" class="md-primary">add</md-icon>
+                    <div class="md-list-item-text">
+                        <h3>{{::penalty.name}}</h3>
+                        <h4>{{player.global_penalties[penalty._id] || 0}} times</h4>
+                        <p>{{(player.global_penalties[penalty._id] || 0) * penalty.price | number:2}} €</p>
+                    </div>
+                    <md-icon ng-click="decrease(penalty)" class="md-warn">remove</md-icon>
+                </md-list-item>
+            </md-list>
+        </md-card-content>
+    </md-card>
+
+    <md-button ui-sref="^.list" class="md-raised">Back</md-button>
+</md-content>

@@ -1,0 +1,19 @@
+<md-list>
+    <md-list-item ng-repeat="gs in gameSessions track by gs._id" class="md-2-line">
+        <div class="md-list-item-text">
+            <h3>
+                <a ui-sref="game_sessions.view({id: gs._id})">
+                    {{::gs.start | date:'dd.MM.yyyy - HH:mm'}}
+                </a>
+            </h3>
+        </div>
+
+        <div layout="row">
+            <md-button ui-sref="game_sessions.edit({id: gs._id})" class="md-icon-button">
+                <md-icon>edit</md-icon>
+            </md-button>
+        </div>
+    </md-list-item>
+</md-list>
+
+<md-button ui-sref="game_sessions.new" class="md-raised md-primary">Create Game Session</md-button>

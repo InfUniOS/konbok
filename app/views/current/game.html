@@ -1,0 +1,20 @@
+<md-content>
+    <div layout="row" layout-wrap>
+        <md-card ng-repeat="player in players track by player._id" flex="20" flex-xs="100" flex-sm="33">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">{{player.firstName}} {{player.lastName}}</span>
+                    <span class="md-subhead">{{player_costs[player._id] | number:2}} €</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button ng-click="openPenaltyPlayerModal(player)">Penalties</md-button>
+            </md-card-actions>
+        </md-card>
+    </div>
+
+    <div layout="row">
+        <md-button ui-sref="^.players({from_game: true})">Back to player selection</md-button>
+        <md-button ui-sref="^.finish" class="md-primary">Next</md-button>
+    </div>
+</md-content>

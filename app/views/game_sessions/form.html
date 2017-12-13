@@ -1,0 +1,22 @@
+<md-content>
+    <form>
+        <div layout="row">
+            <md-input-container flex>
+                <label>Start date & time</label>
+                <input type="datetime-local" ng-model="gs.start">
+            </md-input-container>
+        </div>
+        <div layout="row" ng-show="edit">
+            <md-input-container flex>
+                <label>End date & time</label>
+                <input type="datetime-local" ng-model="gs.end" step="60">
+            </md-input-container>
+        </div>
+
+        <div layout="row">
+            <md-button ng-click="submit()" class="md-raised md-primary">Submit</md-button>
+            <md-button ng-click="delete()" class="md-raised md-warn" ng-show="edit">Delete</md-button>
+            <md-button ui-sref="^.list" class="md-raised">Back</md-button>
+        </div>
+    </form>
+</md-content>

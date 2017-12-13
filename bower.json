@@ -1,0 +1,23 @@
+{
+  "name": "9pp-web",
+  "version": "0.0.0",
+  "dependencies": {
+    "angular": "1.4.9",
+    "angular-animate": "~1.4.9",
+    "angular-cookies": "~1.4.9",
+    "angular-material": "~1.0.4",
+    "angular-pouchdb": "~4.1.0",
+    "angular-resource": "~1.4.9",
+    "angular-sanitize": "~1.4.9",
+    "angular-touch": "~1.4.9",
+    "angular-ui-router": "~0.2.17",
+    "pouchdb": "~5.2.1",
+    "pouchdb-find": "~0.9.0",
+    "underscore": "~1.8.3"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.4.9"
+  },
+  "appPath": "app",
+  "moduleName": "9ppWebApp"
+}

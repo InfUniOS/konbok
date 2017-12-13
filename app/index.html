@@ -1,0 +1,98 @@
+<!doctype html>
+<html class="no-js" manifest="manifest.appcache">
+<head>
+    <meta charset="utf-8">
+    <title>9-Pins penalty App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+</head>
+<body ng-app="9ppWebApp" ng-controller="AppCtrl">
+
+<div layout="row" flex id="container">
+    <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left"
+                md-is-locked-open="$mdMedia('gt-md')">
+        <md-toolbar layout="column">
+            <h1 class="md-toolbar-tools" layout-align-gt-md="start">9-Pins penalty App</h1>
+        </md-toolbar>
+        <md-content class="md-padding">
+            <md-list class="nav-list">
+                <md-list-item>
+                    <md-button ui-sref="/" ng-click="closeNav()">Home</md-button>
+                </md-list-item>
+            </md-list>
+            <md-divider></md-divider>
+            <md-list class="nav-list">
+                <md-list-item ng-repeat="link in navLinks">
+                    <md-button ui-sref="{{link.url}}" ng-click="closeNav()">
+                        {{link.name}}
+                    </md-button>
+                </md-list-item>
+            </md-list>
+        </md-content>
+    </md-sidenav>
+    <div layout="column" flex id="content">
+        <md-toolbar layout="row">
+            <button ng-click="toggleSidenav('left')" hide-gt-md class="menuBtn"></button>
+
+        </md-toolbar>
+        <md-content flex class="md-padding">
+            <div ui-view></div>
+        </md-content>
+    </div>
+</div>
+
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-aria/angular-aria.js"></script>
+<script src="bower_components/angular-messages/angular-messages.js"></script>
+<script src="bower_components/angular-material/angular-material.js"></script>
+<script src="bower_components/pouchdb/dist/pouchdb.js"></script>
+<script src="bower_components/angular-pouchdb/angular-pouchdb.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-touch/angular-touch.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/pouchdb-find/dist/pouchdb.find.min.js"></script>
+<script src="bower_components/underscore/underscore.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<script src="scripts/config.js"></script>
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="scripts/app.js"></script>
+<script src="scripts/controllers/main.js"></script>
+<script src="scripts/controllers/players/list.js"></script>
+<script src="scripts/controllers/app.js"></script>
+<script src="scripts/controllers/players/view.js"></script>
+<script src="scripts/controllers/players/form.js"></script>
+<script src="scripts/services/dbservice.js"></script>
+<script src="scripts/services/playerservice.js"></script>
+<script src="scripts/services/gamesessionservice.js"></script>
+<script src="scripts/controllers/game_sessions/list.js"></script>
+<script src="scripts/controllers/game_sessions/form.js"></script>
+<script src="scripts/controllers/game_sessions/view.js"></script>
+<script src="scripts/services/penaltyservice.js"></script>
+<script src="scripts/controllers/penalties/list.js"></script>
+<script src="scripts/controllers/penalties/form.js"></script>
+<script src="scripts/controllers/penalties/view.js"></script>
+<script src="scripts/controllers/summary.js"></script>
+<script src="scripts/controllers/current/player_select.js"></script>
+<script src="scripts/controllers/current/gameplay.js"></script>
+<script src="scripts/controllers/current/finish_game.js"></script>
+<script src="scripts/controllers/current/wrapper.js"></script>
+<!-- endbuild -->
+</body>
+</html>

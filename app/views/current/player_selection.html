@@ -1,0 +1,14 @@
+<md-content>
+    <md-list>
+        <md-list-item ng-repeat="player in players track by player._id" class="md-2-line">
+            <div class="md-list-item-text">
+                <h3>
+                    {{::player.firstName}} {{::player.lastName}}
+                </h3>
+            </div>
+            <md-switch aria-label="select player" ng-model="selectedPlayers[player._id]"></md-switch>
+        </md-list-item>
+    </md-list>
+
+<md-button ui-sref="^.game" class="md-primary" ng-click="savePlayerRelation()">Next</md-button>
+</md-content>

@@ -1,0 +1,29 @@
+<md-content>
+    <form>
+        <div layout="column">
+            <md-input-container flex>
+                <label>Name</label>
+                <input type="text" ng-model="penalty.name">
+            </md-input-container>
+            <md-input-container flex>
+                <label>Price</label>
+                <input type="number" ng-model="penalty.price" step="0.01" min="0" required="true">
+            </md-input-container>
+            <md-input-container flex>
+                <label>Description</label>
+                <textarea ng-model="penalty.description" columns="1" md-maxlength="150"></textarea>
+            </md-input-container>
+            <md-switch ng-model="penalty.global" aria-label="Global penalty">
+                Global
+            </md-switch>
+            <md-switch ng-model="penalty.inverse" aria-label="inverse penalty">
+                Inverse (if set applies to other players)
+            </md-switch>
+        </div>
+
+        <div layout="row">
+            <md-button ng-click="submit()" class="md-raised md-primary">Submit</md-button>
+            <md-button ui-sref="^.list" class="md-raised">Back</md-button>
+        </div>
+    </form>
+</md-content>

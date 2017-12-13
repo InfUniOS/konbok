@@ -1,0 +1,17 @@
+<md-content>
+    <form>
+        <div layout="row">
+            <md-input-container flex>
+                <label>End date & time</label>
+                <input type="datetime-local" ng-model="gs.end">
+            </md-input-container>
+        </div>
+    </form>
+
+    <md-divider></md-divider>
+
+    <div layout="row">
+        <md-button ui-sref="^.game">Back</md-button>
+        <md-button class="md-primary" ng-click="submit()">Finish</md-button>
+    </div>
+</md-content>

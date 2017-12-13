@@ -1,0 +1,20 @@
+<h2>Open game sessions:</h2>
+<md-list>
+    <md-list-item ng-repeat="gs in openGs">
+        <md-button ui-sref="current.players({id: gs._id})">{{gs.start | date:'dd.MM.yyyy - HH:mm'}}</md-button>
+    </md-list-item>
+</md-list>
+
+<h2>Closed game sessions:</h2>
+<md-list>
+    <md-list-item ng-repeat="gs in closedGs" class="md-3-line md-no-proxy">
+        <div class="md-list-item-text">
+            <h3>{{::gs.start | date:'dd.MM.yyyy - HH:mm'}}</h3>
+            <p>{{::gs.end | date:'dd.MM.yyyy - HH:mm'}}</p>
+            <p>Player count: {{getPlayerCount(gs)}}</p>
+        </div>
+        <div class="md-secondary">
+            <md-button ui-sref="summary({id: gs._id})" class="md-secondary">Summary</md-button>
+        </div>
+    </md-list-item>
+</md-list>

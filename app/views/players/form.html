@@ -1,0 +1,18 @@
+<md-content>
+    <form>
+        <div layout="column">
+            <md-input-container flex>
+                <label>First Name</label>
+                <input ng-model="player.firstName">
+            </md-input-container>
+            <md-input-container flex>
+                <label>Last Name</label>
+                <input ng-model="player.lastName">
+            </md-input-container>
+        </div>
+        <div layout="row">
+            <md-button ng-click="submit()" class="md-raised md-primary">Submit</md-button>
+            <md-button ui-sref="^.list" class="md-raised">Back</md-button>
+        </div>
+    </form>
+</md-content>
