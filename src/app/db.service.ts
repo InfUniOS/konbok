@@ -3,7 +3,7 @@ import { PouchDB } from 'pouchdb';
 import { pouchDBDecorators } from 'pouchdb';
 
 @Injectable()
-export class DbService {
+export class DBService {
   public db: any;
 
   constructor() {

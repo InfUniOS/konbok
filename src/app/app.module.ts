@@ -11,8 +11,8 @@ import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MaterialAppModule } from './material.module';
-import { AppRoutingModule } from './/app-routing.module';
-import { DbService } from './db.service';
+import { AppRoutingModule } from './app-routing.module';
+import { DBService } from './db.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,7 @@ import { DbService } from './db.service';
     AppRoutingModule,
     BrowserAnimationsModule
   ],
-  providers: [DbService],
+  providers: [DBService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
